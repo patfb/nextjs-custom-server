@@ -1,4 +1,6 @@
-import { NextResponse } from "next/server";
+// this is the special middleware file that next.js is watching for
+// below is how to stack middleware functions so they all get called
+
 import type { NextRequest } from "next/server";
 import { aLogger, bLogger, defaultLogger } from "./middlewares";
 
