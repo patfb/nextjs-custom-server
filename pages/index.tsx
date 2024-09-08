@@ -1,3 +1,4 @@
+import "../global.css";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,6 +9,9 @@ export default function Home() {
       </li>
       <li>
         <Link href="/b">b (App Router)</Link>
+      </li>
+      <li>
+        <Link href="/c">c (App Router)</Link>
       </li>
     </ul>
   );
