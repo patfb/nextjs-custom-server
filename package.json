@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "next build && tsc --project tsconfig.server.json",
-    "clean": "rimraf .next",
+    "clean": "rimraf .next dist coverage",
     "dev": "nodemon",
     "lint": "eslint .",
     "next:lint": "next lint",
@@ -10,6 +10,7 @@
     "prettier:write": "prettier . --write",
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "test": "jest"
   },
   "dependencies": {
