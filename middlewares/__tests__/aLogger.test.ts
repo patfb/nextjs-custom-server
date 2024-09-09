@@ -12,4 +12,6 @@ describe("aLogger", () => {
   it("should return undefined", () => {
     expect(aLogger(req)).toBeUndefined();
   });
+
+  it("should break the lint because there is no expect", () => {});
 });
