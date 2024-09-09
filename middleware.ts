@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { aLogger, bLogger, defaultLogger } from "./middlewares";
 
 const PUBLIC_FILE = /\.(.*)$/;
+const countries = ["us", "uk", "au"];
 
 export function middleware(req: NextRequest, res: NextResponse) {
   if (
@@ -28,19 +29,18 @@ export function middleware(req: NextRequest, res: NextResponse) {
     pathname: req.nextUrl.pathname,
     search: req.nextUrl.search,
     url: req.url,
-    redirect: new URL(
-      `/us${req.nextUrl.pathname}${req.nextUrl.search}`,
-      req.url,
-    ).toString(),
   });
 
   if (req.nextUrl.pathname.startsWith("/c")) {
+    const randomCountry =
+      countries[Math.floor(Math.random() * countries.length)];
+
     const redirectUrl = new URL(
-      `/us${req.nextUrl.pathname}${req.nextUrl.search}`,
+      `/${randomCountry}${req.nextUrl.pathname}${req.nextUrl.search}`,
       req.url,
     );
 
-    console.log("redirectTo", redirectUrl.toString());
+    console.log("redirecting to new country", redirectUrl.toString());
 
     return NextResponse.redirect(redirectUrl);
   }
