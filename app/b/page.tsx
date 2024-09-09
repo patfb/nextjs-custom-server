@@ -1,11 +1,8 @@
-// heads up - the nodemon config only includes
-// js and ts files NOT jsx and tsx files
-// this makes me think that next.js
-// is still building those files
+"use client";
 
 import { useEffect } from "react";
 
-let module = {};
+// let module = {};
 
 export default function B() {
   if (true) {
