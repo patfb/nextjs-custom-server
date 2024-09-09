@@ -10,6 +10,6 @@ describe("aLogger", () => {
   } as NextRequest;
 
   it("should return undefined", () => {
-    // expect(aLogger(req)).toBeUndefined();
+    expect(aLogger(req)).toBeUndefined();
   });
 });
