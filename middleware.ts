@@ -2,7 +2,7 @@
 // below is how to stack middleware functions so they all get called
 
 import { NextRequest, NextResponse } from "next/server";
-import { aLogger, bLogger, defaultLogger } from "./middlewares";
+import { aLogger, bLogger, xkcdMiddleware } from "./middlewares";
 
 const PUBLIC_FILE = /\.(.*)$/;
 const countries = ["us", "uk", "au"];
@@ -15,6 +15,10 @@ export function middleware(req: NextRequest, res: NextResponse) {
   ) {
     // don't run middleware because these are internal calls or api calls
     return;
+  }
+
+  if (req.nextUrl.pathname.startsWith("/xkcd-app")) {
+    return xkcdMiddleware(req); // have to actually return in order to get the middleware header added
   }
 
   if (req.nextUrl.pathname.startsWith("/a")) {
