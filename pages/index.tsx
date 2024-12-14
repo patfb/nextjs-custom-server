@@ -5,6 +5,9 @@ import { BigColor } from "../components/BigColor";
 import { FruitContextProvider } from "../components/Fruit/FruitContextProvider";
 import { BigFruit } from "../components/BigFruit";
 
+// TODO pick up here
+// https://react.dev/learn/scaling-up-with-reducer-and-context
+
 export const getServerSideProps = async (context) => {
   // context contains the context of the initial request. we can access request data here
   // we can get the locale from the request here
