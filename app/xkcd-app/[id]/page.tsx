@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import { delay } from "../../../lib/delay";
 
 interface Props {
   params: Promise<{
@@ -20,10 +21,8 @@ interface Comic {
   year: string;
 }
 
-const delay = (ms = 1_000) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const XKCDIdPage = async (props: Props) => {
-  console.log("props are", props);
+  // console.log("props are", props);
 
   // alternatively we could await multiple promises at the same time
   // const [params, headersList] = await Promise.all([props.params, headers()]);
