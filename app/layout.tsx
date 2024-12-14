@@ -1,5 +1,5 @@
 import "../global.css";
-import { FruitContextProvider } from "./FruitContextProvider";
+import { FruitContextProvider } from "../components/Fruit/FruitContextProvider";
 import { delay } from "../lib/delay";
 
 export default async function RootLayout({
@@ -7,7 +7,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const favoriteFruit = await delay(1_000).then(() => "bananas");
+  const favoriteFruit = await delay(1_000).then(() => "async bananas");
 
   return (
     <html lang="en">

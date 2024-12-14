@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { FruitContext } from "../FruitContext";
+import { FruitContext } from "../../components/Fruit/FruitContext";
 
 const FruitPage = (props) => {
   const fruit = useContext(FruitContext);

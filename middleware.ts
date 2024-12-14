@@ -34,18 +34,4 @@ export function middleware(req: NextRequest, res: NextResponse) {
     search: req.nextUrl.search,
     url: req.url,
   });
-
-  if (req.nextUrl.pathname.startsWith("/c")) {
-    const randomCountry =
-      countries[Math.floor(Math.random() * countries.length)];
-
-    const redirectUrl = new URL(
-      `/${randomCountry}${req.nextUrl.pathname}${req.nextUrl.search}`,
-      req.url,
-    );
-
-    console.log("redirecting to new country", redirectUrl.toString());
-
-    return NextResponse.redirect(redirectUrl);
-  }
 }

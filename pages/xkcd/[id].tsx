@@ -1,5 +1,7 @@
 import "@root/global.css";
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { ColorContext } from "../../components/Color/ColorContext";
+import { useContext } from "react";
 
 interface Comic {
   alt: string;
@@ -33,6 +35,8 @@ export default function xkcdIdPage({
   comic,
   id,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const color = useContext(ColorContext);
+
   const renderedComic = comic ? (
     <>
       <h2>{comic.title}</h2>
@@ -53,6 +57,7 @@ export default function xkcdIdPage({
   return (
     <div>
       <h1>xkcd #{id}</h1>
+      <p>color context: {color}</p>
       {renderedComic}
     </div>
   );
