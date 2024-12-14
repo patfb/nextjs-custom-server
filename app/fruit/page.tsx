@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 import { FruitContext } from "../../components/Fruit/FruitContext";
+import { BigFruit } from "../../components/BigFruit";
+import { BigColor } from "../../components/BigColor";
 
 const FruitPage = (props) => {
   const fruit = useContext(FruitContext);
@@ -10,6 +12,8 @@ const FruitPage = (props) => {
     <div>
       <h1>Fruit page!</h1>
       <p>fruit context is: {fruit}</p>
+      <BigFruit />
+      <BigColor />
     </div>
   );
 };

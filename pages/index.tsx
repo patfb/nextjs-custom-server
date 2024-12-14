@@ -1,9 +1,29 @@
 import Link from "next/link";
 import "../global.css";
 
-export default function Nav() {
+export const getServerSideProps = async (context) => {
+  console.log("FETCHING!!!");
+
+  // Fetch data from external API
+  const res = await fetch("https://api.github.com/repos/vercel/next.js");
+  const repo = await res.json();
+
+  console.log("repo is", repo);
+
+  // Pass data to the page via props
+  return { props: { data: repo } };
+};
+
+export default function MainNavigation(props) {
+  // console.log("props are", props);
+  console.log("loaded page", props);
+
+  const { data } = props;
+
+  console.log("data inside page is", data);
+
   return (
-    <>
+    <main>
       <h1>pages nav</h1>
       <ul>
         <p>APP ROUTER</p>
@@ -20,7 +40,8 @@ export default function Nav() {
         <li>
           <Link href="/xkcd/102">/xkcd/102 (Pages Router)</Link>
         </li>
+        <p>ID is: "{JSON.stringify(props.data)}"</p>
       </ul>
-    </>
+    </main>
   );
 }
