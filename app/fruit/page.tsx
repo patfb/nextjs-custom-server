@@ -1,9 +1,9 @@
 "use client";
 
 import { useContext } from "react";
-import { FruitContext } from "../../components/Fruit/FruitContext";
-import { BigFruit } from "../../components/BigFruit";
-import { BigColor } from "../../components/BigColor";
+import { FruitContext } from "components/Fruit/FruitContext";
+import { BigFruit } from "components/BigFruit";
+import { BigColor } from "components/BigColor";
 
 const FruitPage = (props) => {
   const fruit = useContext(FruitContext);

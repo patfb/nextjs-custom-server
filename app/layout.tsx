@@ -1,5 +1,5 @@
 import "../global.css";
-import { FruitContextProvider } from "../components/Fruit/FruitContextProvider";
+import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { delay } from "../lib/delay";
 
 export default async function RootLayout({

@@ -1,10 +1,10 @@
 "use client";
 
 import { useContext } from "react";
-import { ColorContext } from "../../components/Color/ColorContext";
-import { BigColor } from "../../components/BigColor";
-import { ColorContextProvider } from "../../components/Color/ColorContextProvider";
-import { BigFruit } from "../../components/BigFruit";
+import { ColorContext } from "components/Color/ColorContext";
+import { BigColor } from "components/BigColor";
+import { ColorContextProvider } from "components/Color/ColorContextProvider";
+import { BigFruit } from "components/BigFruit";
 
 export default function Color(props) {
   const color = useContext(ColorContext);

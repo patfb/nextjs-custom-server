@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { delay } from "../lib/delay";
-import { ColorContextProvider } from "../components/Color/ColorContextProvider";
-import { BigColor } from "../components/BigColor";
-import { FruitContextProvider } from "../components/Fruit/FruitContextProvider";
-import { BigFruit } from "../components/BigFruit";
+import { ColorContextProvider } from "components/Color/ColorContextProvider";
+import { BigColor } from "components/BigColor";
+import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
+import { BigFruit } from "components/BigFruit";
 
 // TODO pick up here
 // https://react.dev/learn/scaling-up-with-reducer-and-context

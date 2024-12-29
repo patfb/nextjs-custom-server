@@ -1,6 +1,6 @@
 import "@root/global.css";
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { ColorContext } from "../../components/Color/ColorContext";
+import { ColorContext } from "components/Color/ColorContext";
 import { useContext } from "react";
 
 interface Comic {
