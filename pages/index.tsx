@@ -4,6 +4,7 @@ import { ColorContextProvider } from "components/Color/ColorContextProvider";
 import { BigColor } from "components/BigColor";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { BigFruit } from "components/BigFruit";
+import { SportContextProvider } from "components/Sport/SportContextProvider";
 
 // TODO pick up here
 // https://react.dev/learn/scaling-up-with-reducer-and-context
@@ -30,32 +31,37 @@ export default function MainNavigation(props) {
 
   return (
     <main>
-      <ColorContextProvider color={props.color}>
-        <FruitContextProvider fruit={props.fruit}>
-          <h1>pages nav</h1>
-          <ul>
-            <p>APP ROUTER</p>
-            <li>
-              <Link href="/fruit">/fruit (App Router)</Link>
-            </li>
-            <li>
-              <Link href="/xkcd-app/103">/xkcd-app/103 (App Router)</Link>
-            </li>
-            <p>PAGES ROUTER</p>
-            <li>
-              <Link href="/color">/color (Pages Router)</Link>
-            </li>
-            <li>
-              <Link href="/xkcd/102">/xkcd/102 (Pages Router)</Link>
-            </li>
-            <BigColor />
-            <BigFruit />
-            <p>thanks for visiting from: {props.device}</p>
-            <p>color: {props.color}</p>
-            <p>fruit: {props.fruit}</p>
-          </ul>
-        </FruitContextProvider>
-      </ColorContextProvider>
+      <SportContextProvider defaultSport="page router">
+        <ColorContextProvider color={props.color}>
+          <FruitContextProvider fruit={props.fruit}>
+            <h1>pages nav</h1>
+            <ul>
+              <p>APP ROUTER</p>
+              <li>
+                <Link href="/fruit">/fruit (App Router)</Link>
+              </li>
+              <li>
+                <Link href="/sport">/sport (App Router)</Link>
+              </li>
+              <li>
+                <Link href="/xkcd-app/103">/xkcd-app/103 (App Router)</Link>
+              </li>
+              <p>PAGES ROUTER</p>
+              <li>
+                <Link href="/color">/color (Pages Router)</Link>
+              </li>
+              <li>
+                <Link href="/xkcd/102">/xkcd/102 (Pages Router)</Link>
+              </li>
+              <BigColor />
+              <BigFruit />
+              <p>thanks for visiting from: {props.device}</p>
+              <p>color: {props.color}</p>
+              <p>fruit: {props.fruit}</p>
+            </ul>
+          </FruitContextProvider>
+        </ColorContextProvider>
+      </SportContextProvider>
     </main>
   );
 }

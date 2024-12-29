@@ -1,6 +1,7 @@
 import "../global.css";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { delay } from "../lib/delay";
+import { SportContextProvider } from "components/Sport/SportContextProvider";
 
 export default async function RootLayout({
   children,
@@ -11,9 +12,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <FruitContextProvider fruit={favoriteFruit}>
-        <body>{children}</body>
-      </FruitContextProvider>
+      <SportContextProvider defaultSport="app router">
+        <FruitContextProvider fruit={favoriteFruit}>
+          <body>{children}</body>
+        </FruitContextProvider>
+      </SportContextProvider>
     </html>
   );
 }
