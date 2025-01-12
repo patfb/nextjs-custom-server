@@ -1,7 +1,7 @@
 import "../global.css";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { delay } from "../lib/delay";
-import { SportContextProvider } from "components/Sport/SportContextProvider";
+import { SportContextProvider } from "components/SportContext";
 
 export default async function RootLayout({
   children,

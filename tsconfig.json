@@ -21,7 +21,8 @@
     ],
     "paths": {
       "@root/*": ["/*"],
-      "components/*": ["./components/*"]
+      "components/*": ["./components/*"],
+      "lib/*": ["./lib/*"]
     },
     "strictNullChecks": true
   },

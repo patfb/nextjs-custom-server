@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { delay } from "../../../lib/delay";
+import { delay } from "lib/delay";
 
 interface Props {
   params: Promise<{
