@@ -5,6 +5,7 @@ import { BigColor } from "components/BigColor";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { BigFruit } from "components/BigFruit";
 import { SportContextProvider } from "components/Sport/SportContextProvider";
+import Login from "components/Login";
 
 // TODO pick up here
 // https://react.dev/learn/scaling-up-with-reducer-and-context
@@ -59,6 +60,7 @@ export default function MainNavigation(props) {
               <p>color: {props.color}</p>
               <p>fruit: {props.fruit}</p>
             </ul>
+            <Login />
           </FruitContextProvider>
         </ColorContextProvider>
       </SportContextProvider>
