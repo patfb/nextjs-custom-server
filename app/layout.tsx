@@ -8,13 +8,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const favoriteFruit = await delay(1_000).then(() => "async bananas");
+  const { fruit, sport } = await delay(1_000).then(() => ({
+    fruit: "async bananas",
+    sport: "app_sport_" + new Date().toISOString(),
+  }));
 
   return (
     <html lang="en">
-      <SportContextProvider value="app router">
-        <FruitContextProvider fruit={favoriteFruit}>
-          <body>{children}</body>
+      <SportContextProvider value={sport}>
+        <FruitContextProvider fruit={fruit}>
+          <body>
+            <main>{children}</main>
+          </body>
         </FruitContextProvider>
       </SportContextProvider>
     </html>
