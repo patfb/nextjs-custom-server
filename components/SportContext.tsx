@@ -12,8 +12,11 @@ const SportContext = createContext<SportContextInterface>({
   setValue: () => {},
 });
 
-const SportContextProvider = ({ children, sport = "DEFAULT SPORT" }) => {
-  const [value, setValue] = useState(sport);
+const SportContextProvider = ({
+  children,
+  value: inputValue = "DEFAULT SPORT",
+}) => {
+  const [value, setValue] = useState(inputValue);
 
   return (
     <SportContext.Provider value={{ value, setValue }}>

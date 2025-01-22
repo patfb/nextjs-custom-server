@@ -13,7 +13,7 @@ export default function MyApp({
 
   return (
     <SessionProvider session={session}>
-      <SportContextProvider sport={sport}>
+      <SportContextProvider value={sport}>
         <Component {...pageProps} />
       </SportContextProvider>
     </SessionProvider>

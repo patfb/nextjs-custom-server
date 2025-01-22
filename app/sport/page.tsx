@@ -8,7 +8,7 @@ import Link from "next/link";
 const SportPage = (_props) => {
   const { value, setValue } = useContext(SportContext);
 
-  console.log("sportPage sport is", value);
+  console.log("app/sport/page.tsx sport is", value);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const SportPage = (_props) => {
       <p>sport context is: {value}</p>
       <button
         onClick={() => {
-          setValue("set in app/sport/page.tsx_" + new Date().toISOString());
+          setValue("app_sportPage_" + new Date().toISOString());
         }}
       >
         Update Sport
