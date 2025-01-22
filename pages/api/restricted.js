@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./auth/[...nextauth]";
 
-export default async (req, res) => {
+const restricted = async (req, res) => {
   const session = await getServerSession(req, res, authOptions);
 
   console.log("pages/api/restricted.js session", session);
@@ -18,3 +18,5 @@ export default async (req, res) => {
     });
   }
 };
+
+export default restricted;

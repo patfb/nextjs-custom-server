@@ -13,5 +13,6 @@ describe("aLogger", () => {
     expect(aLogger(req)).toBeUndefined();
   });
 
+  // eslint-disable-next-line
   it("should break the lint because there is no expect", () => {});
 });

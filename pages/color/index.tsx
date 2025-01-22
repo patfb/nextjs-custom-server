@@ -27,7 +27,7 @@ export default function Color(props) {
 }
 
 export const getServerSideProps = async (context) => {
-  console.log("FETCHING!!!");
+  console.log("pages/color/index.tsx getServerSideProps context", context);
 
   // Fetch data from external API
   const res = await fetch("https://api.github.com/repos/vercel/next.js");

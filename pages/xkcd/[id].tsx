@@ -2,6 +2,7 @@ import "@root/global.css";
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { ColorContext } from "components/Color/ColorContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 interface Comic {
   alt: string;
@@ -31,7 +32,7 @@ export const getServerSideProps = (async (context) => {
   }
 }) satisfies GetServerSideProps<{ comic: Comic | null; id: string }>;
 
-export default function xkcdIdPage({
+export default function XkcdIdPage({
   comic,
   id,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -48,7 +49,14 @@ export default function xkcdIdPage({
       <p>Transcript: {comic.transcript}</p>
       <p>Alt: {comic.alt}</p>
 
-      <img src={comic.img} />
+      <Image
+        src={comic.img}
+        alt={comic.alt}
+        width={500}
+        height={500}
+        placeholder="empty"
+        priority={true}
+      />
     </>
   ) : (
     <p>could not find comic</p>

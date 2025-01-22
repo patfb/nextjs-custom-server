@@ -5,9 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { aLogger, bLogger, xkcdMiddleware } from "./middlewares";
 
 const PUBLIC_FILE = /\.(.*)$/;
-const countries = ["us", "uk", "au"];
+// const countries = ["us", "uk", "au"];
 
-export function middleware(req: NextRequest, res: NextResponse) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function middleware(req: NextRequest, _res: NextResponse) {
   if (
     req.nextUrl.pathname.startsWith("/_next") ||
     req.nextUrl.pathname.includes("/api/") ||

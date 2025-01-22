@@ -5,6 +5,8 @@ const buildTime = new Date().toISOString();
 console.log("buildTime is", buildTime);
 
 export const getStaticProps = (async (context) => {
+  console.log("pages/static.tsx getStaticProps context is", context);
+
   return { props: { buildTime } };
 }) satisfies GetStaticProps<{
   buildTime: string;

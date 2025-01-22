@@ -24,7 +24,8 @@ export const authOptions = {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      async authorize(credentials, _req) {
         // You need to provide your own logic here that takes the credentials
         // submitted and returns either a object representing a user or value
         // that is false/null if the credentials are invalid.

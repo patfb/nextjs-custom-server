@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { delay } from "lib/delay";
+import Image from "next/image";
 
 interface Props {
   params: Promise<{
@@ -43,6 +44,8 @@ const XKCDIdPage = async (props: Props) => {
     await delay();
     const res = await fetch(`https://xkcd.com/${params.id}/info.0.json`);
     comic = await res.json();
+
+    // console.log("comic is", comic);
   } catch (error) {}
 
   const renderedComic = comic ? (
@@ -56,7 +59,14 @@ const XKCDIdPage = async (props: Props) => {
       <p>Transcript: {comic.transcript}</p>
       <p>Alt: {comic.alt}</p>
 
-      <img src={comic.img} />
+      <Image
+        src={comic.img}
+        alt={comic.alt}
+        width={500}
+        height={500}
+        placeholder="empty"
+        priority={true}
+      />
     </>
   ) : (
     <p>could not find comic</p>

@@ -5,7 +5,7 @@ import { BigColor } from "components/BigColor";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { BigFruit } from "components/BigFruit";
 import Login from "components/Login";
-import { SportContext, SportContextProvider } from "components/SportContext";
+import { SportContext } from "components/SportContext";
 import { useContext } from "react";
 import { randomFromArray } from "lib/randomFromArray";
 

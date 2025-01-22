@@ -12,7 +12,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <SportContextProvider defaultSport="app router">
+      <SportContextProvider sport="app router">
         <FruitContextProvider fruit={favoriteFruit}>
           <body>{children}</body>
         </FruitContextProvider>

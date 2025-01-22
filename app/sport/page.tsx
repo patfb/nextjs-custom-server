@@ -1,25 +1,29 @@
 "use client";
 
 import { useContext } from "react";
-import { SportContext } from "components/Sport/SportContext";
+import { SportContext } from "components/SportContext";
+import Link from "next/link";
 
-const SportPage = (props) => {
-  // @ts-expect-error
-  const { sport, setSport } = useContext(SportContext);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const SportPage = (_props) => {
+  const { value, setValue } = useContext(SportContext);
 
-  console.log("sportPage sport is", sport);
+  console.log("sportPage sport is", value);
 
   return (
     <div>
       <h1>Sport page!</h1>
-      <p>sport context is: {sport}</p>
+      <p>sport context is: {value}</p>
       <button
         onClick={() => {
-          setSport(new Date().toISOString());
+          setValue("set in app/sport/page.tsx_" + new Date().toISOString());
         }}
       >
         Update Sport
       </button>
+      <p>
+        <Link href="/">home</Link>
+      </p>
     </div>
   );
 };

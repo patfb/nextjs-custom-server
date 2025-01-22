@@ -5,7 +5,8 @@ import { FruitContext } from "components/Fruit/FruitContext";
 import { BigFruit } from "components/BigFruit";
 import { BigColor } from "components/BigColor";
 
-const FruitPage = (props) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const FruitPage = (_props) => {
   const fruit = useContext(FruitContext);
 
   return (
