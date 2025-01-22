@@ -1,4 +1,4 @@
-import "../global.css";
+import "@root/global.css";
 import { FruitContextProvider } from "components/Fruit/FruitContextProvider";
 import { delay } from "../lib/delay";
 import { SportContextProvider } from "components/SportContext";
